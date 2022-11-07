@@ -8,19 +8,19 @@ export type Product = {
     url: string;
     thumb_url: string;
   };
-  nova?: Nova;
+  nova: Nova | null;
   nutrition_100g: NutritionalValues | null;
-  nutriscore?: {
-    grade: NutriScoreGrade;
-    negative_points: number;
-    positive_points: number;
+  nutriscore: {
+    grade: NutriScoreGrade | null;
+    negative_points: number | null;
+    positive_points: number | null;
   };
   ingredients: string[] | null;
-  vegetarian: boolean;
-  vegan: boolean;
+  vegetarian: boolean | null;
+  vegan: boolean | null;
   macros: {
-    carbs: number;
-    fat: number;
-    protein: number;
+    carbs: number | null;
+    fat: number | null;
+    protein: number | null;
   };
 };
