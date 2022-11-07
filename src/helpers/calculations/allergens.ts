@@ -1,8 +1,8 @@
 import { AllergenType } from "../../types";
 
 const allergens = (
-  allergens: AllergenType,
-  allergensFromIngredients: AllergenType
+  allergens: AllergenType = [],
+  allergensFromIngredients: AllergenType = []
 ): string[] => {
   const standardiseAllergenInfo = (allergen: AllergenType): string[] => {
     if (Array.isArray(allergen)) {

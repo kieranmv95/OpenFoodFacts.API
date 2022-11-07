@@ -8,8 +8,8 @@ import {
 export type OFAProduct = {
   _id: string;
   product_name: string;
-  allergens: string[];
-  allergens_from_ingredients: string;
+  allergens?: string[];
+  allergens_from_ingredients?: string;
   image_url: string;
   image_thumb_url: string;
   nova_group?: NovaRating;
