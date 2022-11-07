@@ -1,6 +1,6 @@
 import { AllergenType } from "./Allergen";
 import { Ingredient } from "./Ingredient";
-import { NovaRating, novaConfig, Nova } from "./Nova";
+import { Nova, novaConfig, NovaRating } from "./Nova";
 import { NutriScoreGrade } from "./NutriScoreGrade";
 import { NutritionalValues } from "./NutritionalValues";
 import { OFANutritionalValues } from "./OFANutritionalValues";
@@ -11,9 +11,9 @@ import { Product } from "./Product";
 export {
   AllergenType,
   Ingredient,
-  NovaRating,
-  novaConfig,
   Nova,
+  novaConfig,
+  NovaRating,
   NutriScoreGrade,
   NutritionalValues,
   OFANutritionalValues,

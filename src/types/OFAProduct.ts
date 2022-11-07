@@ -1,7 +1,9 @@
-import { Ingredient } from "./Ingredient";
-import { NovaRating } from "./Nova";
-import { NutriScoreGrade } from "./NutriScoreGrade";
-import { OFANutritionalValues } from "./OFANutritionalValues";
+import {
+  Ingredient,
+  NovaRating,
+  NutriScoreGrade,
+  OFANutritionalValues,
+} from "./";
 
 export type OFAProduct = {
   _id: string;

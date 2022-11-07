@@ -1,17 +1,17 @@
-import { NutriScoreGrade } from "../types/NutriScoreGrade";
 import {
+  AllergenType,
   Ingredient,
-  novaConfig,
   Nova,
+  novaConfig,
   NovaRating,
-  OFAProduct,
-  Product,
+  NutriScoreGrade,
   NutritionalValues,
   OFANutritionalValues,
-  AllergenType,
+  OFAProduct,
+  Product,
 } from "../types";
 
-const format_allergens = (
+const calculateAllergens = (
   allergens: AllergenType,
   allergensFromIngredients: AllergenType
 ): string[] => {
@@ -37,7 +37,7 @@ const format_allergens = (
     });
 };
 
-const format_nova = (rating: NovaRating): Nova | null => {
+const calculateNova = (rating: NovaRating): Nova | null => {
   if (!rating) return null;
   return {
     rating,
@@ -45,7 +45,7 @@ const format_nova = (rating: NovaRating): Nova | null => {
   };
 };
 
-const checkDietaryRequirement = (
+const calculateDietaryRequirement = (
   ingredients: Ingredient[],
   dietaryRequirement: "vegan" | "vegetarian"
 ): boolean | null => {
@@ -128,7 +128,7 @@ const calculateNutritionalValues = (
 const transformProduct = (ofaProduct: OFAProduct): Product => ({
   id: ofaProduct._id,
   name: ofaProduct.product_name,
-  allergens: format_allergens(
+  allergens: calculateAllergens(
     ofaProduct.allergens,
     ofaProduct.allergens_from_ingredients
   ),
@@ -136,15 +136,15 @@ const transformProduct = (ofaProduct: OFAProduct): Product => ({
     url: ofaProduct.image_url,
     thumb_url: ofaProduct.image_thumb_url,
   },
-  nova: format_nova(ofaProduct.nova_group),
+  nova: calculateNova(ofaProduct.nova_group),
   nutrition_100g: calculateNutritionalValues(ofaProduct.nutriments),
   nutriscore: calculateNutriscore(
     ofaProduct.nutriscore_data,
     ofaProduct.nutriscore_grade
   ),
   ingredients: calculateIngredients(ofaProduct.ingredients),
-  vegetarian: checkDietaryRequirement(ofaProduct.ingredients, "vegetarian"),
-  vegan: checkDietaryRequirement(ofaProduct.ingredients, "vegan"),
+  vegetarian: calculateDietaryRequirement(ofaProduct.ingredients, "vegetarian"),
+  vegan: calculateDietaryRequirement(ofaProduct.ingredients, "vegan"),
   macros: calculateMacros(ofaProduct.nutriments),
 });
 

@@ -1,6 +1,4 @@
-import { Nova } from "./Nova";
-import { NutriScoreGrade } from "./NutriScoreGrade";
-import { NutritionalValues } from "./NutritionalValues";
+import { Nova, NutriScoreGrade, NutritionalValues } from "./";
 
 export type Product = {
   id: string;
