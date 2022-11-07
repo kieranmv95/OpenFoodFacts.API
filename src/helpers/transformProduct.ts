@@ -8,9 +8,8 @@ import {
   Product,
   NutritionalValues,
   OFANutritionalValues,
+  AllergenType,
 } from "../types";
-
-type AllergenType = string[] | string;
 
 const format_allergens = (
   allergens: AllergenType,

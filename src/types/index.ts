@@ -1,3 +1,4 @@
+import { AllergenType } from "./Allergen";
 import { Ingredient } from "./Ingredient";
 import { NovaRating, novaConfig, Nova } from "./Nova";
 import { NutriScoreGrade } from "./NutriScoreGrade";
@@ -8,6 +9,7 @@ import { OpenFoodFactsResponse } from "./OpenFoodFactsResponse";
 import { Product } from "./Product";
 
 export {
+  AllergenType,
   Ingredient,
   NovaRating,
   novaConfig,
