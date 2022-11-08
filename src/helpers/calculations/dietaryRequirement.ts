@@ -1,7 +1,7 @@
 import { Ingredient } from "../../types";
 
 const dietaryRequirement = (
-  ingredients: Ingredient[],
+  ingredients: Ingredient[] | null,
   dietaryRequirement: "vegan" | "vegetarian"
 ): boolean | null => {
   if (!ingredients) return null;
